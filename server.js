@@ -23,7 +23,7 @@ app.set('view engine', 'ejs');
 app.use(routes);
 
 app.on('pronto', () => {
-    app.listen(3000, () => {
+    app.listen(3200, () => {
         console.log('Server iniciado');
     });
 })
