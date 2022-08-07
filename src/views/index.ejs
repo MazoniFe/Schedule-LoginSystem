@@ -1,14 +1,44 @@
-<%- include('includes/head'); %>
+<%- include('includes/head') %>
+    <%- include('includes/nav') %>
 
-    <body>
-        <section class="container">
-            <h1>Lorem Normal</h1>
-            <form action="/" method="post">
-                <input type="hidden" name="_csrf" value="<%=csrfToken%>">
-                <label>Cliente</label>
-                <input type="text" name="client">
-                <button type="submit">Enviar</button>
-            </form>
-        </section>
-    </body>
-    <%- include('includes/footer'); %>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 my-3">
+                    <h1 class="text-center">AGENDA</h1>
+                    <p class="text-center lead">Seus contatos estão abaixo</p>
+                    <div class="responsive-table">
+                        <table class="table my-3">
+                            <tr>
+                                <td>Felipe</td>
+                                <td>Mazoni</td>
+                                <td>(49) 91234-5678</td>
+                                <td>email@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>Lucas</td>
+                                <td>Miranda</td>
+                                <td>(49) 91234-5678</td>
+                                <td>email@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>Isadora</td>
+                                <td>Souza</td>
+                                <td>(49) 91234-5678</td>
+                                <td>email@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>Itamar</td>
+                                <td>Leandro</td>
+                                <td>(49) 91234-5678</td>
+                                <td>email@gmail.com</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+        </div>
+
+        <%- include('includes/footer') %>
