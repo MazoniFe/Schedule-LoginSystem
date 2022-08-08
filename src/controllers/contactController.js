@@ -16,7 +16,7 @@ exports.register = async(req, res) => {
             return;
         }
         req.flash('success', 'Contato registrado com sucesso!');
-        req.session.save(() => res.redirect(`/contato/index/${contact.contact._id}`));
+        req.session.save(() => res.redirect('back'));
         return;
     } catch (e) {
         console.log(e);
@@ -26,10 +26,10 @@ exports.register = async(req, res) => {
 
 exports.editIndex = async function(req, res) {
     if (!req.params.id) return;
-    const user = await Contact.findId(req.params.id);
-    if (!user) return;
+    const contact = await Contact.findId(req.params.id);
+    if (!contact) return;
     res.render('contact', {
-        contato: user
+        contato: contact
     });
 };
 
@@ -46,10 +46,18 @@ exports.edit = async function(req, res) {
             return;
         }
         req.flash('success', 'Contato editado com sucesso!');
-        req.session.save(() => res.redirect(`/contato/index/${contact.contact._id}`));
+        req.session.save(() => res.redirect('back'));
         return;
     } catch (e) {
         console.log(e);
     }
+};
 
-}
+exports.delete = async function(req, res) {
+    if (!req.params.id) return;
+    const contact = await Contact.delete(req.params.id);
+    if (!contact) return;
+    req.flash('success', 'Contato apagado com sucesso!');
+    req.session.save(() => res.redirect('back'));
+    return;
+};

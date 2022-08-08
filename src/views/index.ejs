@@ -7,36 +7,30 @@
                 <div class="col-lg-8 my-3">
                     <h1 class="text-center">AGENDA</h1>
                     <p class="text-center lead">Seus contatos estão abaixo</p>
+                    <div class="responsive-table">
+                        <table class="table my-3">
+                            <%contatos.forEach(contato =>{ %>
+                                <tr>
+                                    <td>
+                                        <%= contato.nome%>
+                                    </td>
+                                    <td>
+                                        <%= contato.sobrenome%>
+                                    </td>
+                                    <td>
+                                        <%= contato.telefone%>
+                                    </td>
+                                    <td>
+                                        <%= contato.email%>
+                                    </td>
+                                    <td> <a href="/contato/index/<%= contato._id%>">Editar</a></td>
+                                    <td> <a class="text-danger" href="/contato/delete/<%= contato._id%>">Delete</a></td>
+                                </tr>
+                                <%});%>
 
-                    <%- include('includes/messages'); %>
-                        <div class="responsive-table">
-                            <table class="table my-3">
-                                <tr>
-                                    <td>Felipe</td>
-                                    <td>Mazoni</td>
-                                    <td>(49) 91234-5678</td>
-                                    <td>email@gmail.com</td>
-                                </tr>
-                                <tr>
-                                    <td>Lucas</td>
-                                    <td>Miranda</td>
-                                    <td>(49) 91234-5678</td>
-                                    <td>email@gmail.com</td>
-                                </tr>
-                                <tr>
-                                    <td>Isadora</td>
-                                    <td>Souza</td>
-                                    <td>(49) 91234-5678</td>
-                                    <td>email@gmail.com</td>
-                                </tr>
-                                <tr>
-                                    <td>Itamar</td>
-                                    <td>Leandro</td>
-                                    <td>(49) 91234-5678</td>
-                                    <td>email@gmail.com</td>
-                                </tr>
-                            </table>
-                        </div>
+
+                        </table>
+                    </div>
 
                 </div>
                 <div class="col-lg-2"></div>
