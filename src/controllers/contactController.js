@@ -1,4 +1,3 @@
-const { userSetter } = require('core-js/fn/symbol');
 const Contact = require('../models/ContactModel');
 
 exports.index = (req, res) => {
@@ -17,7 +16,7 @@ exports.register = async(req, res) => {
             return;
         }
         req.flash('success', 'Contato registrado com sucesso!');
-        req.session.save(() => res.redirect(`/contato/index/${contact.contact._id}`));
+        req.session.save(() => res.redirect('back'));
         return;
     } catch (e) {
         console.log(e);
