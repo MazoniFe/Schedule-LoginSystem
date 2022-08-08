@@ -8,12 +8,19 @@
                     <h1 class="text-center">login</h1>
 
                     <%- include('includes/messages')%>
-
                         <div class="row my-5">
                             <div class="col-lg">
                                 <h4>Faça seu cadastro</h4>
                                 <form action="/login/register" method="POST">
                                     <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                                    <div class="form-group">
+                                        <label>Nome</label>
+                                        <input type="text" class="form-control" placeholder="Nome" name="nome">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Sobrenome</label>
+                                        <input type="text" class="form-control" placeholder="Email" name="sobrenome">
+                                    </div>
                                     <div class="form-group">
                                         <label>Seu email</label>
                                         <input type="email" class="form-control" placeholder="Email" name="email">
@@ -29,7 +36,7 @@
 
                             <div class="col-lg">
                                 <h4>Faça seu login</h4>
-                                <form action="/login/register" method="POST">
+                                <form action="/login/login" method="POST">
                                     <input type="hidden" name="_csrf" value="<%=csrfToken%>">
                                     <div class="form-group">
                                         <label>Seu email</label>
